@@ -8,7 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\teleperformance-case3.Application\teleperformance-case3.Application.csproj" />
+    <ProjectReference Include="..\teleperformance-case3.Infrastructure\teleperformance-case3.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Response\" />
   </ItemGroup>
 
 </Project>
