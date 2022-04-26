@@ -7,5 +7,6 @@ public class User : BaseEntity
     public string Mail { get; set; }
     public string HashedPassword { get; set; }
     public string Salt { get; set; }
+    public string Role { get; set; } = "User";
     public List<ShoppingList> ShoppingLists { get; set; }
 }

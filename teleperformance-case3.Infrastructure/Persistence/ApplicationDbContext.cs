@@ -12,6 +12,10 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<User> Users => Set<User>();
+    public DbSet<Category> Categories => Set<Category>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<ShoppingList> ShoppingLists => Set<ShoppingList>();
+    public DbSet<ShoppingListItem> ShoppingListItems => Set<ShoppingListItem>();
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {
@@ -43,6 +47,22 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        builder.Entity<User>().HasData(
+            new User
+            {
+                Id = 1,
+                IsActive = true,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                Mail = "string@string.com",
+                HashedPassword = "tUn4h2XVOvn7cxuT8FFGpWHI+j+06dG4OnJ9QwHepTk=",
+                Salt = "1XVHITnBr667HSsBT4TvRA==",
+                Name = "asd",
+                Role = "Admin",
+                Surname = "asdasd"
+            }
+        );
 
         base.OnModelCreating(builder);
     }

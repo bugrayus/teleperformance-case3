@@ -8,7 +8,7 @@ using teleperformance_case3.Domain.Entities;
 
 namespace teleperformance_case3.Application.Handlers.Commands;
 
-public class RegisterHandler : IRequestHandler<RegisterCommand, bool>
+internal class RegisterHandler : IRequestHandler<RegisterCommand, bool>
 {
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;

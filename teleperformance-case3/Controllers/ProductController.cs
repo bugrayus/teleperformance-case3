@@ -76,4 +76,27 @@ public class ProductController : BaseController
         var response = await Mediator.Send(command);
         return Success("Shopping list item added successfully.", response);
     }
+
+    [HttpDelete("{productId}/shopping-lists/{shoppingListId}")]
+    public async Task<IActionResult> DeleteShoppingListItemAsync(int productId, int shoppingListId)
+    {
+        var command = new DeleteShoppingListItemCommand
+        {
+            ShoppingListId = shoppingListId,
+            ProductId = productId
+        };
+        var response = await Mediator.Send(command);
+        return Success("Shopping list item deleted successfully.", response);
+    }
+
+    [HttpDelete("shopping-lists/{id}")]
+    public async Task<IActionResult> DeleteShoppingListItemsAsync(int id)
+    {
+        var command = new DeleteShoppingListItemsCommand
+        {
+            Id = id
+        };
+        var response = await Mediator.Send(command);
+        return Success("Shopping list items deleted successfully.", response);
+    }
 }

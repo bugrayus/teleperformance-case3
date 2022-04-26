@@ -8,7 +8,7 @@ using teleperformance_case3.Models;
 namespace teleperformance_case3.Controllers;
 
 [Authorize]
-[Route("api/category")]
+[Route("api/categories")]
 [ApiController]
 public class CategoryController : BaseController
 {

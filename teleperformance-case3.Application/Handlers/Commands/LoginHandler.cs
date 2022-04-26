@@ -9,7 +9,7 @@ using teleperformance_case3.Application.Models;
 
 namespace teleperformance_case3.Application.Handlers.Commands;
 
-public class LoginHandler : IRequestHandler<LoginCommand, LoginResponse>
+internal class LoginHandler : IRequestHandler<LoginCommand, LoginResponse>
 {
     private readonly IApplicationDbContext _context;
     private readonly IMapper _mapper;

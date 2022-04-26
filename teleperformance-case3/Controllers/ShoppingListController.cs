@@ -56,15 +56,4 @@ public class ShoppingListController : BaseController
         var response = await Mediator.Send(query);
         return Success("Shopping list fetched successfully.", response);
     }
-
-    [HttpDelete("{id}/products")]
-    public async Task<IActionResult> DeleteShoppingListItemsAsync(int id)
-    {
-        var command = new DeleteShoppingListItemsCommand
-        {
-            Id = id
-        };
-        var response = await Mediator.Send(command);
-        return Success("Shopping list items deleted successfully.", response);
-    }
 }

@@ -38,6 +38,15 @@ public class ErrorHandler
 
             await HandleExceptionAsync(context, ex.Error, code);
         }
+        catch (UnauthorizedException ex)
+        {
+            var code = ex switch
+            {
+                { } => HttpStatusCode.Unauthorized
+            };
+
+            await HandleExceptionAsync(context, ex.Error, code);
+        }
         catch (Exception ex)
         {
             var error = new Error
@@ -49,7 +58,7 @@ public class ErrorHandler
             {
                 ApiException => HttpStatusCode.InternalServerError,
                 ValidationException => HttpStatusCode.BadRequest,
-                _ => HttpStatusCode.BadRequest
+                _ => HttpStatusCode.InternalServerError
             };
             await HandleExceptionAsync(context, error, code);
         }

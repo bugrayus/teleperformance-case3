@@ -1,8 +1,8 @@
 ﻿namespace teleperformance_case3.Application.Common.Exceptions;
 
-public class ValidationException : Exception
+public class UnauthorizedException : Exception
 {
-    public ValidationException(Error error)
+    public UnauthorizedException(Error error)
     {
         Error = error;
     }
