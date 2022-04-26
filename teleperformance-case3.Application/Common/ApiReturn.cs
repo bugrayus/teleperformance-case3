@@ -4,7 +4,9 @@ public class ApiReturn
 {
     public string ApiVersion { get; set; } = "1.0";
     public int StatusCode { get; set; }
+    public double ResponseTime { get; set; }
     public DateTime UtcTimestamp { get; set; } = DateTime.UtcNow;
+    public object Data { get; set; }
     public bool IsErrorOccured { get; set; }
     public Error Error { get; set; }
 

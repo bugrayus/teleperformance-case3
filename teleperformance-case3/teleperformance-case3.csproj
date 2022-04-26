@@ -18,8 +18,4 @@
     <ProjectReference Include="..\teleperformance-case3.Infrastructure\teleperformance-case3.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Response\" />
-  </ItemGroup>
-
 </Project>

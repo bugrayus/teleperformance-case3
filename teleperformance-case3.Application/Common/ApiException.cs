@@ -14,6 +14,7 @@ public class Error
 {
     public string Message { get; set; }
     public string StackTrace { get; set; }
+    public List<string> Errors { get; set; }
 
     public bool ShouldSerializeStackTrace()
     {
